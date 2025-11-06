@@ -1,0 +1,11 @@
+#spring.application.name=demo-backend
+server:
+  port: 8185
+Spring:
+  application:
+    name: demo-backend
+  profiles:
+    active: dev
+
+
+
