@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pacientes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a14cb809-3232-4032-88bc-d68c5dc25613">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="clinicadb"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="LOGO" class="java.lang.String"/>
+	<parameter name="NOMBRE_REPORTE" class="java.lang.String"/>
+	<parameter name="MARCA_AGUA" class="java.lang.String"/>
+	<parameter name="PIE_PAGINA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select  identificacion, nombre, apellido, edad  from paciente ]]>
+	</queryString>
+	<field name="identificacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="identificacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="identificacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="edad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="edad"/>
+		<property name="com.jaspersoft.studio.field.label" value="edad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="109" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-11" y="0" width="130" height="99" uuid="05167fc7-411d-48d7-af6b-03a7e9567fee"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="140" y="60" width="420" height="30" uuid="37623eb5-37d6-482a-9113-53be89d4f9c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOMBRE_REPORTE}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="70" y="108" width="550" height="1" uuid="a7bc2124-0e3a-45f8-a926-620be3ffb87f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="4" width="455" height="55" forecolor="#FFFFFF" backcolor="#336B87" uuid="2e588257-8a16-4036-9069-2706fb1a4ea5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[Reporte de Pacientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="130" height="30" uuid="80591b2b-5d3b-438c-b789-5a20fee7fa76">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2789d1ac-5db6-4c3c-9138-dce62e7c7bd3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Identificacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="180" height="30" uuid="5bd65243-695a-41cc-b398-e9192bb548a4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84152212-c846-42b7-961a-d20d8125a1a7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="120" height="30" uuid="e4537987-f048-4eff-b7b7-ee7b4616fc28">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d99f67ee-f864-40c1-8497-5a11a427f8e3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="140" height="30" uuid="4bff1bf0-5b17-4897-86ee-4339839686b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="818b5364-1fab-4996-a06e-91f13a629db0"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="fdaee245-ae30-4307-911d-71c462098d5d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2789d1ac-5db6-4c3c-9138-dce62e7c7bd3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{identificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="100" height="30" uuid="5bc60951-6b77-4721-8b3b-5ed122e95b82">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84152212-c846-42b7-961a-d20d8125a1a7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="100" height="30" uuid="7e296241-3a2d-4640-831d-53bb29464ad6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d99f67ee-f864-40c1-8497-5a11a427f8e3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="100" height="30" uuid="b773f011-c619-46f3-9e6e-910f9e63f446">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="818b5364-1fab-4996-a06e-91f13a629db0"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="138" splitType="Stretch">
+			<line>
+				<reportElement x="10" y="104" width="550" height="1" uuid="432152ea-b217-4ef3-a8d9-70d143ea3f36">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<image scaleImage="FillFrame">
+				<reportElement x="10" y="0" width="179" height="108" uuid="793227ec-0082-4928-ad45-b25ac982f5fb"/>
+				<imageExpression><![CDATA[$P{PIE_PAGINA}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

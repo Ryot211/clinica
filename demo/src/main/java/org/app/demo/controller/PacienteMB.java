@@ -46,7 +46,7 @@ public class PacienteMB implements Serializable {
         datosReporte.setParametros(parametros);
         datosReporte.setDataSource(Boolean.FALSE);
         datosReporte.setGestorDocumental(Boolean.FALSE);
-        datosReporte.setNombreReporte("clinicaa_pacientes");
+        datosReporte.setNombreReporte("pacientes");
         ss.setDatosReporte(datosReporte);
         ss.setNombreDocumento("Pacientes");
         redireccionarReporte();
