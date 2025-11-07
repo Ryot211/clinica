@@ -43,20 +43,20 @@ public class CitaMB  implements Serializable {
         ss.borrarDatos();
         ss.instanciarParametros();
         Map<String, Object> parametros = new HashMap<>();
-        parametros.put("Citas","Clinica Santander");
+        parametros.put("NOMBRE_REPORTE", "CURSO DE JAVA AVANZADO");
         parametros.put("estado", estado);
         datosReporte.setFormato((ReporteFormato.PDF.getCodigo()));
         datosReporte.setNombreArchivo("Citas"+ReporteFormato.PDF.getCodigo());
         datosReporte.setParametros(parametros);
         datosReporte.setDataSource(Boolean.FALSE);
         datosReporte.setGestorDocumental(Boolean.FALSE);
-        datosReporte.setNombreReporte("Citas Clinica Santander");
+        datosReporte.setNombreReporte("citas");
         ss.setDatosReporte(datosReporte);
         ss.setNombreDocumento("Citas");
         redireccionarReporte();
     }
     public void redireccionarReporte(){
-        JsfUtils.redirectNewTab("/ReportesWS");
+        JsfUtils.redirectNewTab("/ReporteWS");
     }
     public void nuevo(Cita cita, String origen, Boolean visualizar){
         ss.borrarDatos();

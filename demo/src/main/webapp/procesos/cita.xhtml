@@ -16,17 +16,14 @@
                 <p:commandButton icon="pi pi-plus" ajax="false" value="Nuevo"
                                  actionListener="#{citaMB.nuevo(null, '/procesos/paciente.xhtml',false)}"/>
             </p:panelGrid>
-            <p:dataTable rows="5" paginator="true" paginatorPosition="bottom" id="pacientes" widgetVar="pacientes"
+            <p:dataTable rows="5" paginator="true" paginatorPosition="bottom" id="citas" widgetVar="pacientes"
                          value="#{citaMB.citas}" var="item">
                 <f:facet name="header">
-                    <h2>Pacientess</h2>
-                    <p:commandButton value="Filtrar Activos" process="@this" update="pacientes"
+                    <h2>Citas</h2>
+                    <p:commandButton value="Filtrar Activos" process="@this" update="citas"
                                      actionListener="#{citaMB.loadCitas('ACTIVO')}" style="width:150px;"/>
                     <p:spacer width="10"/>
-                    <p:commandButton value="Filtrar Inactivos" process="@this" update="pacientes"
-                                     actionListener="#{citaMB.loadCitas('INACTIVO')}" style="width:150px;"/>
-                    <p:spacer width="10"/>
-                    <p:commandButton value="Imprimir ACTIVO" icon="pi pi-print"
+                    <p:commandButton value="Imprimir " icon="pi pi-print"
                                      actionListener="#{citaMB.imprimir('ACTIVO')}" style="width:200px;"/>
                     <p:spacer width="10"/>
                     <p:commandButton value="Imprimir INACTIVOS" icon="pi pi-print"

@@ -16,10 +16,10 @@
                 <p:commandButton icon="pi pi-plus" ajax="false" value="Nuevo"
                                  actionListener="#{doctorMB.nuevo(null, '/procesos/paciente.xhtml',false)}"/>
             </p:panelGrid>
-            <p:dataTable rows="5" paginator="true" paginatorPosition="bottom" id="pacientes" widgetVar="pacientes"
+            <p:dataTable rows="5" paginator="true" paginatorPosition="bottom" id="doctores" widgetVar="doctores"
                          value="#{doctorMB.doctores}" var="item">
                 <f:facet name="header">
-                    <h2>Pacientess</h2>
+                    <h2>Doctores</h2>
                     <p:commandButton value="Filtrar Activos" process="@this" update="pacientes"
                                      actionListener="#{doctorMB.loadDoctores('ACTIVO')}" style="width:150px;"/>
                     <p:spacer width="10"/>
