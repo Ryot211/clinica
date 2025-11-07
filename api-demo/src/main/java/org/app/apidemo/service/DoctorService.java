@@ -11,6 +11,10 @@ import java.util.Optional;
 public class DoctorService {
     @Autowired
     private DoctorRepo doctorRepo;
+    public Doctor buscarPorId(Long id) {
+        return doctorRepo.findById(id).orElse(null);
+    }
+
     // Crear un nuevo Doctor post
     public Doctor crearDoctor(Doctor doctor) {
         doctor.setEstado("ACTIVO");
@@ -35,4 +39,5 @@ public class DoctorService {
         }
         return false;// fallo falto el id o nose se proceso la soli
     }
+
 }

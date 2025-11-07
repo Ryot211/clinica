@@ -17,6 +17,8 @@ public class PacienteService {
         return pacienteRepo.save(paciente);
     }
 
+
+
     //GET
     public List<Paciente> consultarPacienteXEstado(String estado) {
         return pacienteRepo.findAllByEstadoOrderByIdAsc(estado);
@@ -37,5 +39,10 @@ public class PacienteService {
         }
         return false; // falto el id del paciente
     }
+    // Buscar paciente por ID
+    public Paciente buscarPorId(Long id) {
+        return pacienteRepo.findById(id).orElse(null);
+    }
+
 
 }

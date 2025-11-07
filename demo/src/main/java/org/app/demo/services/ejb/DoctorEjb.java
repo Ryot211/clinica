@@ -23,4 +23,11 @@ public class DoctorEjb implements DoctorService {
     public List<Doctor>consultarXEstado(String estado) {
         return appService.methodListGET(VariablesInicio.wsDemo.concat("doctores/consultar/").concat(estado),Doctor[].class);
     }
+    @Override
+    public Doctor buscarPorId(Long id) {
+        return (Doctor) appService.methodGET(
+                VariablesInicio.wsDemo.concat("doctores/buscar/").concat(String.valueOf(id)),
+                Doctor.class
+        );
+    }
 }

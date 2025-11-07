@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="clinicaa_pacientes" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9370af12-2dc5-469d-8f30-3bbc2b8922a4">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="clinicadb"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dsReportePacientes" uuid="8d698f0b-5689-4808-b5e1-d1299593da2d">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="clinicadb"/>
+		<queryString language="SQL">
+			<![CDATA[select identificacion,nombre,apellido from paciente]]>
+		</queryString>
+		<field name="identificacion" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="identificacion"/>
+			<property name="com.jaspersoft.studio.field.label" value="identificacion"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		</field>
+		<field name="nombre" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		</field>
+		<field name="apellido" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="apellido"/>
+			<property name="com.jaspersoft.studio.field.label" value="apellido"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		</field>
+	</subDataset>
+	<parameter name="LOGO" class="java.lang.String"/>
+	<parameter name="Parameter1" class="java.lang.String"/>
+	<parameter name="MARCA_AGUA" class="java.lang.String"/>
+	<parameter name="PIE_PAGINA" class="java.lang.String"/>
+	<parameter name="NOMBRE_REPORTE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select identificacion,nombre,apellido from paciente;]]>
+	</queryString>
+	<field name="identificacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="identificacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="identificacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="140" height="99" uuid="a517b0ff-e046-4e04-a9bc-37ed5cc47c74"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="-2" width="420" height="42" forecolor="#FFFFFF" backcolor="#336B87" uuid="723ae372-df83-4f59-993c-8d255011bf75"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="34"/>
+				</textElement>
+				<text><![CDATA[Clinica Santander]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="47" width="420" height="30" uuid="076ccb1e-aecc-41d4-bfec-979adea9aafb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOMBRE_REPORTE}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="104" width="550" height="1" uuid="1a0b83ea-e705-49ea-a8ca-e19903ebb3e8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="559" height="55" forecolor="#FFFFFF" backcolor="#336B87" uuid="244e32f7-26b6-43da-b640-f3492ba00fde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[Reporte de Pacientes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="257" splitType="Stretch">
+			<componentElement>
+				<reportElement x="20" y="20" width="524" height="150" uuid="a050c875-5bf6-412d-968c-8614337041b2">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dsReportePacientes" uuid="ca3c6fc6-c5cf-4532-b21c-113424cbabcb">
+						<dataSourceExpression><![CDATA[$P{ds}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="099b3571-6259-497e-8fdf-d1f821b02e70">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="15dace93-3e40-4077-bc51-c1122dc701ac"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Identificación]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="b3391512-48f8-4d7b-8a34-f3a0e3903a93"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{identificacion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="210" uuid="b099a392-b9c2-4dce-84b9-857d9cf752a1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="210" height="30" uuid="927db554-3dd0-47f7-8a18-bf11021e5135"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Nombre]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="210" height="30" uuid="15ec5f52-d78c-4997-a4bb-27efb28d2b06"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="214" uuid="1087e9f0-ebcd-4c1c-b9a6-87c2d4afa6f1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="214" height="30" uuid="214f7302-aaf7-4313-9dab-92f2310d2142"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Apellido]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="214" height="30" uuid="5fa4b22c-4a6d-4c0d-a5a0-7065417587dd"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="209" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="20" y="80" width="179" height="108" uuid="4b950db9-7e69-42df-8db0-0e4d1a1ece13"/>
+				<imageExpression><![CDATA[$P{PIE_PAGINA}]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="449" y="170" width="100" height="30" uuid="fdda94c4-1e3d-48c4-87a0-0c493c38dd06"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

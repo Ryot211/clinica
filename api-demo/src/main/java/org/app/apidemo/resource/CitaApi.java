@@ -16,6 +16,12 @@ import java.util.Map;
 public class CitaApi {
     @Autowired
     private CitaService citaService;
+    @GetMapping(value = "citas/consultar/todas")
+    public ResponseEntity<List<Cita>> obtenerTodas() {
+        return new ResponseEntity<>(citaService.obtenerTodas(), HttpStatus.OK);
+    }
+
+
     // Crear Cita
     @PostMapping(value = "citas/crear")
     public ResponseEntity<Map<String, Object>> createCita(@RequestBody Cita cita) {

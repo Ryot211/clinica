@@ -9,6 +9,9 @@ public class Cita {
     public String motivo;
     private Long id_paciente;
     private Long id_doctor;
+    private Paciente paciente;
+    private Doctor doctor;
+
     private String estado;
 
     public Cita(){this.estado = StatusType.ACTIVO.name();}
@@ -60,6 +63,22 @@ public class Cita {
     public void setId_doctor(Long id_doctor) {
         this.id_doctor = id_doctor;
     }
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
 
     public String getEstado() {
         return estado;

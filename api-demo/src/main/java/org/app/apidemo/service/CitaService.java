@@ -12,6 +12,10 @@ import java.util.Optional;
 public class CitaService {
     @Autowired
     private CitaRepo citaRepo;
+    public List<Cita> obtenerTodas() {
+        return citaRepo.findAll();
+    }
+
     // Crear una cita
     public Cita creaCita(Cita cita){
         cita.setEstado("ACTIVO");

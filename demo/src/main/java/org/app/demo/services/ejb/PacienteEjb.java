@@ -23,4 +23,12 @@ public class PacienteEjb implements PacienteService {
     public List<Paciente>consultarXEstado(String estado){
         return appService.methodListGET(VariablesInicio.wsDemo.concat("pacientes/consultar/").concat(estado), Paciente[].class);
     }
+    @Override
+    public Paciente buscarPorId(Long id) {
+        return (Paciente) appService.methodGET(
+                VariablesInicio.wsDemo.concat("pacientes/buscar/").concat(String.valueOf(id)),
+                Paciente.class
+        );
+    }
+
 }

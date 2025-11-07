@@ -39,6 +39,17 @@ public class PacienteApi {
         }
     }
 
+// Buscar paciente por ID
+    @GetMapping(value = "pacientes/buscar/{id}")
+    public ResponseEntity<Paciente> buscarPorId(@PathVariable Long id) {
+        Paciente paciente = pacienteService.buscarPorId(id);
+        if (paciente != null) {
+            return new ResponseEntity<>(paciente, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 
     @PostMapping(value = "pacientes/actualizar")
     public ResponseEntity<Paciente> actualizarPaciente(@RequestBody Paciente paciente){

@@ -39,12 +39,14 @@
                 <p:column width="50" headerText="motivo" filterBy="#{item.motivo}" filterMatchMode="contains">
                     <p:outputLabel value="#{item.motivo}"/>
                 </p:column>
-                <p:column width="50" headerText="Paciente" filterBy="#{item.id_paciente}" filterMatchMode="contains">
-                    <p:outputLabel value="#{item.id_paciente}"/>
+                <p:column width="50" headerText="Paciente">
+                    <h:outputText value="#{item.id_paciente}" />
                 </p:column>
-                <p:column width="50" headerText="Dcotor" filterBy="#{item.id_doctor}" filterMatchMode="contains">
-                    <p:outputLabel value="#{item.id_doctor}"/>
+
+                <p:column width="50" headerText="Doctor">
+                    <h:outputText value="#{item.id_doctor}" />
                 </p:column>
+
                 <p:column width="25" headerText="Estado">
                     <p:outputLabel value="#{item.estado}"/>
                 </p:column>

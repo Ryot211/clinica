@@ -10,4 +10,5 @@ import java.util.List;
 public interface PacienteService {
     public RespuestaWs guardar(Paciente paciente);
     public List<Paciente> consultarXEstado(String estado);
+    public Paciente buscarPorId(Long id);
 }

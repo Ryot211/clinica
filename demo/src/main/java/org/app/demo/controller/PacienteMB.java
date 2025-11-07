@@ -39,20 +39,20 @@ public class PacienteMB implements Serializable {
         ss.borrarDatos();
         ss.instanciarParametros();
         Map<String, Object> parametros = new HashMap<>();
-        parametros.put("Pacientes Activos","Clinica Santader");
+        parametros.put("NOMBRE_REPORTE","Pacientes");
         parametros.put("estado",estado);
         datosReporte.setFormato(ReporteFormato.PDF.getCodigo());
         datosReporte.setNombreArchivo("Pacientes"+ReporteFormato.PDF.getExtension());
         datosReporte.setParametros(parametros);
         datosReporte.setDataSource(Boolean.FALSE);
         datosReporte.setGestorDocumental(Boolean.FALSE);
-        datosReporte.setNombreReporte("Paciente Activos");
+        datosReporte.setNombreReporte("clinicaa_pacientes");
         ss.setDatosReporte(datosReporte);
         ss.setNombreDocumento("Pacientes");
         redireccionarReporte();
     }
     public void redireccionarReporte(){
-       JsfUtils.redirectNewTab("/ReportesWS");
+       JsfUtils.redirectNewTab("/ReporteWS");
     }
 
     public void nuevo (Paciente paciente,String origen, Boolean visualizar){

@@ -15,6 +15,16 @@ import java.util.Map;
 public class DoctorApi {
     @Autowired
     private DoctorService doctorService;
+    // Buscar doctor por ID
+    @GetMapping(value = "doctores/buscar/{id}")
+    public ResponseEntity<Doctor> buscarPorId(@PathVariable Long id) {
+        Doctor doctor = doctorService.buscarPorId(id);
+        if (doctor != null) {
+            return new ResponseEntity<>(doctor, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     @GetMapping(value="doctores/consultar/{estado}")
     public ResponseEntity<List<Doctor>> consultarDoctor(@PathVariable String estado){

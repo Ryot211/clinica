@@ -11,4 +11,5 @@ public interface CitaService {
     public RespuestaWs guardar(Cita cita);
 
     public List<Cita> consultarXEstado(String estado);
+    public List<Cita> obtenerTodas();
 }

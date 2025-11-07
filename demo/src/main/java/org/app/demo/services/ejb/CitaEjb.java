@@ -23,4 +23,11 @@ public class CitaEjb  implements CitaService {
     public List<Cita>consultarXEstado(String estado){
         return appService.methodListGET(VariablesInicio.wsDemo.concat("citas/consultar/").concat(estado),Cita[].class);
     }
+    @Override
+    public List<Cita> obtenerTodas() {
+        return appService.methodListGET(
+                VariablesInicio.wsDemo.concat("citas/consultar/todas"),
+                Cita[].class
+        );
+    }
 }
