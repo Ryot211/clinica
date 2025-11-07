@@ -24,10 +24,9 @@
                                      actionListener="#{citaMB.loadCitas('ACTIVO')}" style="width:150px;"/>
                     <p:spacer width="10"/>
                     <p:commandButton value="Imprimir " icon="pi pi-print"
-                                     actionListener="#{citaMB.imprimir('ACTIVO')}" style="width:200px;"/>
+                                     actionListener="#{citaMB.imprimir('ACTIVO')}" style="width:150px;"/>
                     <p:spacer width="10"/>
-                    <p:commandButton value="Imprimir INACTIVOS" icon="pi pi-print"
-                                     actionListener="#{citaMB.imprimir('INACTIVO')}" style="width:200px;"/>
+
                 </f:facet>
                 <p:column width="50" headerText="Fecha" filterBy="#{item.Fecha}"
                           filterMatchMode="contains">

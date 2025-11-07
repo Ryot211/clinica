@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="citas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d52cbd71-e0e6-4d52-8a98-d7dd5c248aa3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="clinicadb"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="LOGO" class="java.lang.String"/>
 	<parameter name="NOMBRE_REPORTE" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[]]>
+		<![CDATA[SELECT 
+  ci.fecha, 
+  ci.motivo, 
+  pa.nombre AS nombre_paciente, 
+  doc.nombre AS nombre_doctor
+FROM cita ci
+INNER JOIN paciente pa ON ci.id_paciente = pa.id_paciente
+INNER JOIN doctor doc ON doc.id_doctor = ci.id_doctor;]]>
 	</queryString>
+	<field name="fecha" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cita"/>
+	</field>
+	<field name="motivo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="motivo"/>
+		<property name="com.jaspersoft.studio.field.label" value="motivo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cita"/>
+	</field>
+	<field name="nombre_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+	</field>
+	<field name="nombre_doctor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_doctor"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_doctor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -33,10 +62,60 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="30" uuid="c1bef057-00b7-4c6d-8594-32eff1d95fc9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0f13d580-9fda-4098-a78e-b8eee02632be"/>
+				</reportElement>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="138" height="30" uuid="e0b3d620-fc11-43d9-8511-10ca6a485062">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="45f89df2-e1fb-40fd-9eff-f49abd1d38c8"/>
+				</reportElement>
+				<text><![CDATA[motivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="138" height="30" uuid="5b0e4173-3edb-441f-b316-3583cfb9d319">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6ec62d0d-8500-401a-b269-1037d0cf8d64"/>
+				</reportElement>
+				<text><![CDATA[nombre_paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="30" uuid="338c3608-9104-4f16-b14b-c013fdcfc207">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6e88a110-382f-496c-986d-1380fdbf2911"/>
+				</reportElement>
+				<text><![CDATA[nombre_doctor]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="141" height="30" uuid="ee193f71-61ff-46aa-9a60-e9b7b5346926">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0f13d580-9fda-4098-a78e-b8eee02632be"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="30" uuid="33849bfd-0b2e-43a3-90c4-bec5548112de">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="45f89df2-e1fb-40fd-9eff-f49abd1d38c8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{motivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="30" uuid="2a8debed-a5ac-42fb-aab7-76cd0ebc9738">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6ec62d0d-8500-401a-b269-1037d0cf8d64"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre_paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="30" uuid="2bbceba2-aa85-4eb4-991a-d4531fc5a5c5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6e88a110-382f-496c-986d-1380fdbf2911"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre_doctor}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
